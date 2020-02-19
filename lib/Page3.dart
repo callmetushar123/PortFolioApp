@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Page3 extends StatefulWidget {
   @override
@@ -89,21 +90,44 @@ class _Page3State extends State<Page3> {
                     child: SignInButton(
                       Buttons.GitHub,
                       mini: true,
-                      onPressed: () {},
+                      onPressed: () async {
+                        const url = 'https://github.com/tusharhigh';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
                     )),
                 Container(
                     padding: EdgeInsets.only(top: 20, left: 25, right: 10),
                     child: SignInButton(
                       Buttons.LinkedIn,
                       mini: true,
-                      onPressed: () {},
+                      onPressed: () async {
+                        const url =
+                            'https://www.linkedin.com/in/tushar-barman-b82a1b11a/';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
                     )),
                 Container(
                     padding: EdgeInsets.only(top: 20, left: 25, right: 10),
                     child: SignInButton(
                       Buttons.Facebook,
                       mini: true,
-                      onPressed: () {},
+                      onPressed: () async {
+                        const url =
+                            "https://www.facebook.com/tushar.barman.33821";
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
                     )),
               ],
             ),

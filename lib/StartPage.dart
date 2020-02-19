@@ -2,19 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_particles/particles.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'Page1.dart';
-import 'Page3.dart';
-import 'page2.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:portfolioapp/Pages.dart';
 
 class StartPage extends StatelessWidget {
   final controller = PageController();
-  final List<Widget> pages = [
-    Page1(),
-    Page2(),
-    Page3(),
-    Page4(),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +16,7 @@ class StartPage extends StatelessWidget {
             controller: controller,
             scrollDirection: Axis.horizontal,
             //physics: ScrollPhysics(),
-            children: pages,
+            children: Pages.pages,
           ),
           Container(
             height: 700,
